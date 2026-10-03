@@ -127,10 +127,7 @@ def webhook():
         return jsonify({"error": f"Internal server error: {str(e)}"}), 500
 
 
-@app.route('/health', methods=['GET'])
-def health():
-    """Health check endpoint."""
-    return jsonify({"status": "healthy", "service": "local_bridge"}), 200
+@app.route('/health', methods=['GET']) def health_check(): return {"status": "ok", "message": "Bridge is healthy"}, 200
 
 
 if __name__ == '__main__':
