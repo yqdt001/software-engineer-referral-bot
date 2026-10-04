@@ -1,1 +1,1 @@
-{ "version": 2, "builds": [ { "src": "local_bridge.py", "use": "@vercel/python" } ], "routes": [ { "src": "/(.*)", "dest": "local_bridge.py" } ] }
+{ "$schema": "https://openapi.vercel.sh/vercel.json", "services": { "app": { "root": ".", "framework": "flask" } }, "rewrites": [ { "source": "/(.*)", "destination": { "service": "app" } } ] }
